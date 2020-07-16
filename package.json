@@ -1,0 +1,17 @@
+{
+  "name": "bipbop-extension",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "cp src/manifest.json dist/ && parcel build src/{background.js,content.js}",
+    "firefox": "yarn build && yarn web-ext run --source-dir='./dist'",
+    "chrome": "yarn build && yarn web-ext run --source-dir='./dist' --target chromium"
+  },
+  "dependencies": {
+    "@cliqz/adblocker-webextension": "^1.17.0",
+    "@cliqz/adblocker-webextension-cosmetics": "^1.17.0",
+    "parcel": "^2.0.0-beta.1",
+    "web-ext": "^4.3.0",
+    "webextension-polyfill": "^0.6.0"
+  }
+}
